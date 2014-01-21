@@ -3242,54 +3242,15 @@ public class FilebrowserULTRAActivity extends ListActivity implements
 
 			TextView app_name,
 			version_name,
-			developer_name,
-			twitter_name;
+			developer_name;
 			app_name = (TextView) dialog.findViewById(R.id.name_app);
 			version_name = (TextView) dialog.findViewById(R.id.version_app);
 			developer_name = (TextView) dialog
 					.findViewById(R.id.name_developer);
-			twitter_name = (TextView) dialog.findViewById(R.id.name_twitter);
 
 			app_name.setTypeface(Fonts.SONY);
 			version_name.setTypeface(Fonts.SONY);
 			developer_name.setTypeface(Fonts.SONY);
-			twitter_name.setTypeface(Fonts.SONY);
-
-			Button cancelButton = (Button) dialog
-					.findViewById(R.id.cancel_button);
-			cancelButton.setOnClickListener(new OnClickListener() {
-
-				public void onClick(View v) {
-					dialog.dismiss();
-				}
-			});
-
-			Button emailButton = (Button) dialog
-					.findViewById(R.id.contact_button);
-			emailButton.setOnClickListener(new OnClickListener() {
-
-				public void onClick(View v) {
-
-					final Intent i = new Intent(Intent.ACTION_SEND);
-					String[] recipients = new String[] { "kshark05@gmail.com" };
-					i.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
-					i.putExtra(Intent.EXTRA_EMAIL, recipients);
-					i.putExtra(Intent.EXTRA_TEXT,
-							"Write us a feedback about what you liked or didn't like about the app.");
-					i.setType("message/rfc822");
-					startActivity(Intent.createChooser(i, "Contact Us"));
-					dialog.dismiss();
-				}
-			});
-
-			Button marketButton = (Button) dialog
-					.findViewById(R.id.market_link);
-			marketButton.setOnClickListener(new OnClickListener() {
-
-				public void onClick(View v) {
-					dialog.dismiss();
-				}
-			});
 
 			dialog.show();
 
