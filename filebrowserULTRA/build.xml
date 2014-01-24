@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="FileExplorer2" default="help">
     <property environment="env" />
-    <!-- XTREAMER_MANIFEST_DIR must be set in build script. -->
-    <condition property="manifest.dir" value="${env.XTREAMER_MANIFEST_DIR}">
-        <isset property="env.XTREAMER_MANIFEST_DIR" />
+    <!-- MANIFEST_DIR must be set in build script. -->
+    <condition property="manifest.dir" value="${env.MANIFEST_DIR}">
+        <isset property="env.MANIFEST_DIR" />
     </condition>
 
     <fail message="manifest.dir is missing. please check environment is initialising correctly" unless="manifest.dir" />
